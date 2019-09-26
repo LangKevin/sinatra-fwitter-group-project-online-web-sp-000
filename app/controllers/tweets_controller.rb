@@ -60,7 +60,6 @@ class TweetsController < ApplicationController
     patch '/tweets/:id' do
     if !is_logged_in?
       redirect to '/login'
-
     else
       if params[:content] == ""
         redirect to "/tweets/#{params[:id]}/edit"
