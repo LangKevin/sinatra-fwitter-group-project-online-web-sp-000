@@ -13,7 +13,6 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-  # helpers do
     def is_logged_in?
       # binding.pry
       !!session[:user_id]
@@ -21,5 +20,5 @@ class ApplicationController < Sinatra::Base
     def current_user
       User.find(session[:user_id])
     end
-  # end
+
 end
