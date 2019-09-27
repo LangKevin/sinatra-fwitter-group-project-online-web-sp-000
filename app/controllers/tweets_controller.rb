@@ -73,7 +73,7 @@ class TweetsController < ApplicationController
               redirect to "/tweets/#{@tweet.id}/edit"
 
             else
-              redirect to "/tweets/#{@tweet.id}"              
+              redirect to "/tweets/#{@tweet.id}"
             end
           else
             redirect to '/tweets'
@@ -84,9 +84,10 @@ class TweetsController < ApplicationController
 
     delete '/tweets/:id/delete' do
       if !is_logged_in?
+#binding.pry
         redirect to '/login'
       else
-        #binding.pry
+#binding.pry
         @tweet = Tweet.find_by_id(params[:id])
         if @tweet && @tweet.user == current_user
           @tweet.delete
