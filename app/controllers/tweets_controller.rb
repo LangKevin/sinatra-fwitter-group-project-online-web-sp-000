@@ -82,6 +82,7 @@ class TweetsController < ApplicationController
       if !is_logged_in?
         redirect to '/login'
       else
+        #binding.pry
         @tweet = Tweet.find_by_id(params[:id])
         if @tweet && @tweet.user == current_user
           @tweet.delete
