@@ -1,8 +1,8 @@
 class TweetsController < ApplicationController
     get '/tweets' do
+      #binding.pry
       if !is_logged_in?
         redirect to '/login'
-
       else
         @tweets = Tweet.all
         erb :'tweets/tweets'
