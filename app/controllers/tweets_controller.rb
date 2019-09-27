@@ -71,7 +71,7 @@ class TweetsController < ApplicationController
 #binding.pry
             if !retVal
               redirect to "/tweets/#{@tweet.id}/edit"
-
+#binding.pry
             else
               redirect to "/tweets/#{@tweet.id}"
             end
