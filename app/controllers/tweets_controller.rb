@@ -69,10 +69,11 @@ class TweetsController < ApplicationController
 #binding.pry
             retVal = @tweet.update(content: params[:content])
 #binding.pry
-            if retVal
-              redirect to "/tweets/#{@tweet.id}"
-            else
+            if !retVal
               redirect to "/tweets/#{@tweet.id}/edit"
+
+            else
+              redirect to "/tweets/#{@tweet.id}"              
             end
           else
             redirect to '/tweets'
